@@ -5,6 +5,11 @@
 
 // The editor creator to use.
 import ClassicEditorBase from '@ckeditor/ckeditor5-editor-classic/src/classiceditor';
+// import Command from '@ckeditor/ckeditor5-core/src/command';
+// import Plugin from '@ckeditor/ckeditor5-core/src/plugin';
+// import Widget from '@ckeditor/ckeditor5-widget/src/widget';
+// import { toWidget } from '@ckeditor/ckeditor5-widget/src/utils';
+// import ButtonView from '@ckeditor/ckeditor5-ui/src/button/buttonview';
 
 import Essentials from '@ckeditor/ckeditor5-essentials/src/essentials';
 import UploadAdapter from '@ckeditor/ckeditor5-adapter-ckfinder/src/uploadadapter';
@@ -29,6 +34,10 @@ import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefrom
 import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 import SimpleUploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/simpleuploadadapter';
+import Strikethrough from '@ckeditor/ckeditor5-basic-styles/src/strikethrough';
+import AdEmbedTop from './adEmbed/adEmbedTop';
+import AdEmbedMiddle from './adEmbed/adEmbedMiddle';
+import AdEmbedBottom from './adEmbed/adEmbedBottom';
 
 export default class ClassicEditor extends ClassicEditorBase {}
 
@@ -56,7 +65,11 @@ ClassicEditor.builtinPlugins = [
 	PasteFromOffice,
 	Table,
 	TableToolbar,
-	SimpleUploadAdapter
+	SimpleUploadAdapter,
+	AdEmbedTop,
+	AdEmbedMiddle,
+	AdEmbedBottom,
+	Strikethrough
 ];
 
 // Editor configuration.
@@ -67,6 +80,7 @@ ClassicEditor.defaultConfig = {
 			'|',
 			'bold',
 			'italic',
+			'strikethrough',
 			'link',
 			'bulletedList',
 			'numberedList',
@@ -79,7 +93,11 @@ ClassicEditor.defaultConfig = {
 			'insertTable',
 			'mediaEmbed',
 			'undo',
-			'redo'
+			'redo',
+			'|',
+			'adEmbedTop',
+			'adEmbedMiddle',
+			'adEmbedBottom'
 		]
 	},
 	image: {

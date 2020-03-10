@@ -89,12 +89,10 @@
     "build/**",
     "packages/**"
   ],
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
+  
   "dependencies": {
+    "@ckeditor/ckeditor5-font": "^17.0.0",
+    "@ckeditor/ckeditor5-horizontal-line": "^17.0.0",
     "@ckeditor/ckeditor5-upload": "^16.0.0"
   }
 }
