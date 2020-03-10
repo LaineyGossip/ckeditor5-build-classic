@@ -5,11 +5,6 @@
 
 // The editor creator to use.
 import ClassicEditorBase from '@ckeditor/ckeditor5-editor-classic/src/classiceditor';
-// import Command from '@ckeditor/ckeditor5-core/src/command';
-// import Plugin from '@ckeditor/ckeditor5-core/src/plugin';
-// import Widget from '@ckeditor/ckeditor5-widget/src/widget';
-// import { toWidget } from '@ckeditor/ckeditor5-widget/src/utils';
-// import ButtonView from '@ckeditor/ckeditor5-ui/src/button/buttonview';
 
 import Essentials from '@ckeditor/ckeditor5-essentials/src/essentials';
 import UploadAdapter from '@ckeditor/ckeditor5-adapter-ckfinder/src/uploadadapter';
@@ -38,6 +33,9 @@ import Strikethrough from '@ckeditor/ckeditor5-basic-styles/src/strikethrough';
 import AdEmbedTop from './adEmbed/adEmbedTop';
 import AdEmbedMiddle from './adEmbed/adEmbedMiddle';
 import AdEmbedBottom from './adEmbed/adEmbedBottom';
+import FontSize from '@ckeditor/ckeditor5-font/src/fontsize';
+import FontColor from '@ckeditor/ckeditor5-font/src/fontcolor';
+import HorizontalLine from '@ckeditor/ckeditor5-horizontal-line/src/horizontalline';
 
 export default class ClassicEditor extends ClassicEditorBase {}
 
@@ -69,7 +67,10 @@ ClassicEditor.builtinPlugins = [
 	AdEmbedTop,
 	AdEmbedMiddle,
 	AdEmbedBottom,
-	Strikethrough
+	Strikethrough,
+	FontSize,
+	FontColor,
+	HorizontalLine
 ];
 
 // Editor configuration.
@@ -78,6 +79,8 @@ ClassicEditor.defaultConfig = {
 		items: [
 			'heading',
 			'|',
+			'fontSize',
+			'fontColor',
 			'bold',
 			'italic',
 			'strikethrough',
@@ -85,8 +88,7 @@ ClassicEditor.defaultConfig = {
 			'bulletedList',
 			'numberedList',
 			'|',
-			'indent',
-			'outdent',
+			'horizontalLine',
 			'|',
 			'imageUpload',
 			'blockQuote',
